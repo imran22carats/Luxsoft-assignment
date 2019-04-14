@@ -1,0 +1,74 @@
+<p-tabView>
+  <p-tabPanel header="Employee Details">
+    <div class="col-md-12">
+      <div class="Col-md-12">
+        <h2> Employee Details </h2>
+      </div>
+      <hr>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="name">Name : </label>
+            <input class="form-control" id="name" name="name" [(ngModel)]="employee.name" placeholder="Name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="name">Emp Id : </label>
+            <input class="form-control" [(ngModel)]="employee.empId" id="empId" name="empId" placeholder="Emp Id">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="name">Designation : </label>
+            <input class="form-control" name="designation" [(ngModel)]="employee.designation" id="designation"
+              placeholder="Designation">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="name">Age : </label>
+            <input class="form-control" name="age" [(ngModel)]="employee.age" type="number" id="age" placeholder="Age">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="button" class="btn btn-danger" style="margin-left:15px;" (click)="reset()">Cancel</button>
+      </form>
+    </div>
+    <br>
+    <div *ngIf="successMessage!=''" class="alert alert-success text-center" role="alert">
+      {{successMessage}}
+    </div>
+    <h3>Employee Data</h3>
+    <p-table [columns]="cols" [value]="employeeData" [lazy]="true" (onLazyLoad)="loadCarsLazy($event)" [paginator]="true" 
+    [rows]="2" [totalRecords]="totalRecords" [loading]="loading">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+          </th>
+          <th style="width: 170px">Action</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+          <td *ngFor="let col of columns">
+            {{rowData[col.field]}}
+          </td>
+          <td style="width: 170px">
+            <button class="btn btn-success btn-sm" (click)="edit(rowData)" id="edit">edit</button> |
+            <button class="btn btn-danger btn-sm" (click)="delete(rowData.id)" id="delete">Delete</button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-tabPanel>
+  <p-tabPanel header="Employee Visualization">
+    <div class="Col-md-12">
+      <h2> Employee Visualization </h2>
+    </div>
+    <div class="Col-md-6">
+      <p-chart type="doughnut"  [data]="employeeChartData"></p-chart>
+    </div>
+  </p-tabPanel>
+</p-tabView>
