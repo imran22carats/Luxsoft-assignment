@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuxSoft.Assignment.Api", "LuxSoft-Assignment.Api\LuxSoft.Assignment.Api.csproj", "{4B7F71E5-FFFF-4628-8398-20289B5A6AED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B7F71E5-FFFF-4628-8398-20289B5A6AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B7F71E5-FFFF-4628-8398-20289B5A6AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B7F71E5-FFFF-4628-8398-20289B5A6AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B7F71E5-FFFF-4628-8398-20289B5A6AED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB73FDE2-DD22-41FD-8329-162651B2E43C}
+	EndGlobalSection
+EndGlobal
